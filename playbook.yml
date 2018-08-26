@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  tasks:
+    - docker_container:
+        name: example-play
+        image: python:alpine
+        command: ["sleep", "1d"]
+
+- name: Example play
+  hosts: example-play
+  roles:
+    - name: "docker-role"
